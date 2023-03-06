@@ -10,13 +10,13 @@
 **This site was created in order to keep your notes.**
 
 <p align="center">
-<img src="public/screenshots/Screen-main.jpg" width="80%"></p>
+<img src="public/screenshots/screen-main.jpg" width="80%"></p>
 
 На главной странице отображается список заметок и кнопка для создания новой заметки. Тут можно удалить заметку, отметить ее выполненной и начать ее редактирование.<br> <br>
 The main page displays a list of notes and a button for creating a new note. Here you can delete a note, mark it completed and start editing it.
 
 <p align="center">
-<img src="public/screenshots/Screen-edit.jpg" width="80%"></p>
+<img src="public/screenshots/screen-edit.jpg" width="80%"></p>
 
 Так выглядит окно редактирования. Можно изменить начертание шрифта и добавить/удалить картинку.<br><br>
 This is what the edit window looks like. You can change the font style and add/remove an image.
