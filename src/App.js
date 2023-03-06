@@ -1,61 +1,58 @@
-import './App.css';
+import './style/App.scss';
 import ToDo from './components/ToDo';
 import Modal from './components/Modal';
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addTodo, addTodoFirestore } from './store/TodoSlice';
+import { addTodoFirestore } from './store/TodoSlice';
 
-import { todoList, database } from "./firebase";
-// import { doc, setDoc } from "firebase/firestore"; 
+import { todoList } from "./lib/firebase";
 
 function App() {
 
   const todos = useSelector(state => state.todos.todos);
 
   const [isModal, setModal] = useState(false);
-  const [todo, setTodo] = useState()
+  const [id, setId] = useState('')
   
-
   const dispatch = useDispatch();
-  const addTask = () => {
-    dispatch(addTodo({todo}))
-    setTodo('');
+  
+  const changeModal = (todo) => {
+    setId(todo.id)
+    setModal(true)
   }
 
-  const changeTodo = (text) => {
-    setTodo(text)
-  }
-  
   useEffect(() => {
     todoList
-    .then(result => result.map(item => dispatch(addTodoFirestore({item}))
-    )) 
+      .then(result => result.map(item => dispatch(addTodoFirestore({ item }))
+      ))
   }, [])
 
 
   return (
     <div className="App">
-      
-      <div>
 
-           <h1>Todo List</h1>
-
-              <ToDo todos={todos}/>
-
-        </div>
+      <div className='container'>
+        <h1>Заметки</h1>
+        <ToDo 
+        todos={todos} 
+        handleClick={changeModal}
+        />
+      </div>
 
       <button
-           className="button"
-           onClick={() => setModal(true)}
-      >Create New Todo</button>
+        className="button"
+        onClick={() => {setId(''); setModal(true)}}
+      >Создать новую заметку</button>
 
       <Modal
         isVisible={isModal}
-        onClose={() => setModal(false)}
-        todoCreate={addTask}
-        handleChange={changeTodo}
+        onClose={() => {
+          setModal(false) 
+        }}
+        handleChange={changeModal}
+        id={id}
       />
     </div>
   );
