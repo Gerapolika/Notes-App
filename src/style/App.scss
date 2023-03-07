@@ -171,3 +171,15 @@ label span {
   }
 }
 
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* portrait styles here */
+  .App {
+    width: 95%;
+  }
+  .todo {
+    font-size: 15px;
+  }
+  .todo-article {
+    max-width: 50%;
+  }
+  }
