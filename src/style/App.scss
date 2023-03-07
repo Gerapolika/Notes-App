@@ -58,7 +58,9 @@ form {
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-  height: 50px;
+  min-height: 50px;
+  text-align: justify;
+  margin: 0 10px 0 10px;
 }
 
 .todo:nth-child(n+3) {
@@ -68,16 +70,15 @@ form {
 .todo-article {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  max-width: 80%;
 }
 
 .not-completed-todo {
   color: $darkGrey;
   text-decoration: none;
-  margin: 10px 40px;
 }
 
 .completed-todo {
-  margin: 10px 40px;
   color: $lightGrey;
   text-decoration: line-through $lightBlue 3px;
 }
@@ -130,14 +131,20 @@ label span {
   .button {
     width: 300px;
   }
+  .todo-article {
+    max-width: 60%;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .App {
-    width: auto;
+    width: 90%;
   }
   h1 {
     font-size: 30px;
+  }
+  .container {
+    width: 90%;
   }
   .todo {
     font-size: 15px;
