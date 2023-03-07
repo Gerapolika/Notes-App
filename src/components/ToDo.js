@@ -1,10 +1,17 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import deleteIcon from "../images/delete-icon.png"
 import editIcon from "../images/editing-icon.png"
 import { useDispatch } from "react-redux"
 import { deleteTodo, completeTodo } from '../store/TodoSlice'
 
 const ToDo = ({ todos, handleClick }) => {
+
+    ToDo.propTypes = {
+        todos: PropTypes.array,
+        handleClick: PropTypes.func,
+    }
+
 
     const dispatch = useDispatch()
 
@@ -28,7 +35,7 @@ const ToDo = ({ todos, handleClick }) => {
                     ></p>
                     <div>
                         <button className="icon"
-                            onClick={(e) => handleClick(todo)}
+                            onClick={() => handleClick(todo)}
                         >
                             <img src={editIcon} alt="editIcon" />
                         </button>

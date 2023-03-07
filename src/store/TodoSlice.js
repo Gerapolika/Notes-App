@@ -98,7 +98,7 @@ const todoSlice = createSlice({
                 })
                 .then(function (blob) {
                     //here the image is a blob and is sent to the storage
-                    uploadBytes(storageRef, blob).then((snapshot) => {
+                    uploadBytes(storageRef, blob).then(() => {
                         console.log('Uploaded a blob!');
                     });
                 })
