@@ -2,7 +2,7 @@
 <h1 align="center">Notes</h1>
 <h2 align="center">
 
-<!-- <h2 align="center"><a  href="">Live Demo</a></h2> -->
+<h2 align="center"><a  href="https://candid-biscuit-db86fb.netlify.app/">Live Demo</a></h2>
 
 ## Description
 

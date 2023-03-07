@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import ImageUploading from "react-images-uploading";
+import PropTypes from 'prop-types';
 import { storage } from '../lib/firebase';
 import { ref, getDownloadURL } from "firebase/storage";
 import { addTodo, updateTodo, addImage, deleteImg } from '../store/TodoSlice';
@@ -12,6 +13,12 @@ import imgIcon from "../images/icon-add-image.png"
 import deleteIcon from "../images/delete-icon.png"
 
 const Modal = ({ isVisible = false, id, onClose }) => {
+
+  Modal.propTypes = {
+    isVisible: PropTypes.bool,
+    id: PropTypes.string,
+    onClose: PropTypes.func,
+  }
 
   const { register, handleSubmit, reset } = useForm();
   const [isSubmit, setIsSubmit] = useState(false)
@@ -91,7 +98,6 @@ const Modal = ({ isVisible = false, id, onClose }) => {
   };
 
   const onSubmit = () => {
-    console.log("aaa")
     //existing note
     if (id.length > 0) {
       dispatch(updateTodo({ text, italic, bold, id: id }))
@@ -148,7 +154,7 @@ const Modal = ({ isVisible = false, id, onClose }) => {
               acceptType={["jpg"]}
             >
               {({
-                imageList,
+                // imageList,
                 onImageUpload,
                 // onImageRemoveAll,
                 // onImageUpdate,
@@ -201,7 +207,7 @@ const Modal = ({ isVisible = false, id, onClose }) => {
                 <div >
                   {/* delete image */}
                   <button className="delete-img"
-                    onClick={(e) => {
+                    onClick={() => {
                       setDeletedImages(prevDeletedImages => [
                         ...prevDeletedImages,
                         {

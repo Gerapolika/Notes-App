@@ -15,9 +15,9 @@ function App() {
 
   const [isModal, setModal] = useState(false);
   const [id, setId] = useState('')
-  
+
   const dispatch = useDispatch();
-  
+
   const changeModal = (todo) => {
     setId(todo.id)
     setModal(true)
@@ -33,23 +33,24 @@ function App() {
   return (
     <div className="App">
 
-      <div className='container'>
+      <section className='container'>
         <h1>Заметки</h1>
-        <ToDo 
-        todos={todos} 
-        handleClick={changeModal}
+        <ToDo
+          todos={todos}
+          handleClick={changeModal}
         />
-      </div>
+      </section>
 
       <button
         className="button"
-        onClick={() => {setId(''); setModal(true)}}
-      >Создать новую заметку</button>
+        onClick={() => { setId(''); setModal(true) }}>
+        Создать новую заметку
+      </button>
 
       <Modal
         isVisible={isModal}
         onClose={() => {
-          setModal(false) 
+          setModal(false)
         }}
         handleChange={changeModal}
         id={id}
