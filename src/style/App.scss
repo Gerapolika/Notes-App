@@ -171,7 +171,10 @@ label span {
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
   /* portrait styles here */
   .App {
     width: 95%;
