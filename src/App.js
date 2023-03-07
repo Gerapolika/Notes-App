@@ -33,8 +33,8 @@ function App() {
   return (
     <div className="App">
 
-      <section className='container'>
         <h1>Заметки</h1>
+      <section className='container'>
         <ToDo
           todos={todos}
           handleClick={changeModal}

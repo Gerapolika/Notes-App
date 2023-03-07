@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   min-height: 70vh;
+  max-height: 80vh;
   width: 50%;
   flex-direction: column;
   border: 2px solid $lightGrey;
@@ -28,6 +29,8 @@
 
 .container {
   margin-bottom: 20px;
+  overflow: scroll;
+  width: 80%;
 }
 
 .button {
@@ -134,8 +137,12 @@ label span {
   .button {
     width: 300px;
   }
+  .container {
+    width: 90%;
+  }
   .todo-article {
     max-width: 60%;
+    overflow: hidden;
   }
 }
 
@@ -145,9 +152,6 @@ label span {
   }
   h1 {
     font-size: 30px;
-  }
-  .container {
-    width: 90%;
   }
   .todo {
     font-size: 15px;
