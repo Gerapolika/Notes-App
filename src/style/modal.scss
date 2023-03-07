@@ -1,3 +1,4 @@
+
 @import "variables";
 
 .modal {
@@ -19,7 +20,7 @@
 .modal-dialog {
   width: 100%;
   max-width: 550px;
-  background: $white;
+  background-image: url("../images/back.jpg");
   position: relative;
   border: 2px solid $lightGrey;
   border-radius: 10px;
@@ -36,7 +37,7 @@
   animation-duration: 0.5s;
 }
 
-.modal-texarea {
+.modal-textarea {
   display: flex;
   align-items: center;
   min-height: 15vh;
@@ -44,10 +45,11 @@
 }
 
 .modal-todo {
-  height: 50px;
+  height: 30vh;
   width: 100rem;
   font-size: 20px;
   border: none;
+  background: none;
 }
 
 .modal-close {
@@ -135,5 +137,11 @@
 
   to {
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modal-todo {
+    height: 40vh;
   }
 }

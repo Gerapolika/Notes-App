@@ -181,7 +181,7 @@ const Modal = ({ isVisible = false, id, onClose }) => {
           </div>
 
           {/* textarea */}
-          <div className="modal-texarea">
+          <div className="modal-textarea">
             <textarea id="control"
               className={
                 `modal-todo 

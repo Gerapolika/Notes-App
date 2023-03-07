@@ -13,7 +13,9 @@
   border: 2px solid $lightGrey;
   border-radius: 10px;
   background-color: $white;
-  box-shadow: 0px 0px 30px $lightGrey;}
+  background-image: url("../images/back.jpg");
+  box-shadow: 0px 0px 30px $lightGrey;
+}
 
 .App-logo {
   height: 40vmin;
@@ -71,6 +73,7 @@ form {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   max-width: 80%;
+  margin: 0 10px 0 10px;
 }
 
 .not-completed-todo {
@@ -106,7 +109,7 @@ label span {
   border: 3px solid $lightBlue;
   display: inline-block;
   position: relative;
-  background-color: $white;
+  background: none;
   border-radius: 5px;
   padding: 3px;
 }
