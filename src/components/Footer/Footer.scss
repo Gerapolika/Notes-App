@@ -1,0 +1,61 @@
+@import "../../assets/style/variables.scss";
+
+.footer {
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  color: $inputColor;
+
+  &__items {
+    width: 28%;
+  }
+}
+
+.footer__buttons {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btn {
+    height: 30px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: $inputColor;
+  }
+}
+
+.footer-btn-active {
+  border: 2px solid $title;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .footer,
+  .footer__buttons__btn {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+    .footer,
+    .footer__buttons__btn {
+      font-size: 12px;
+    }
+
+    .footer {
+        &__items {
+            width: 27%;
+          }        
+    }
+
+    .footer__buttons {
+        width: 35%;
+    }
+  }
+  

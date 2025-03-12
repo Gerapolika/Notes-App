@@ -1,0 +1,109 @@
+@import "../../assets/style/variables.scss";
+
+.todo-list {
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(70vh - 230px);
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: #fefefe;
+  border: none;
+  box-shadow: 0px 0px 30px $lightGrey;
+  overflow: scroll;
+  transition: height 300ms, padding 500ms;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.hidden-todo-list {
+  height: 0px;
+  padding: 0px 5px 0px;
+}
+
+.todo-list__todo {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  text-align: justify;
+  margin: 0 10px 0 10px;
+
+  &__text {
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 80%;
+    margin: 0 10px 0 10px;
+  }
+}
+
+.todo:nth-child(n + 3) {
+  border-top: 1px groove;
+}
+
+.not-completed-text {
+  color: $inputColor;
+  text-decoration: none;
+}
+
+.completed-text {
+  color: $lightGrey;
+  text-decoration: line-through $placeholderColor 2px;
+}
+
+label input {
+  display: none;
+}
+
+label span {
+  height: 20px;
+  width: 20px;
+  border: 2px solid $placeholderColor;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: none;
+  padding: 3px;
+}
+
+[type="checkbox"]:checked + span:before {
+  content: "\2714";
+  position: absolute;
+  font-size: 25px;
+  color: $doneTodoColor;
+}
+
+[type="checkbox"]:checked + span {
+  border: 1px solid $doneTodoColor;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .todo-list__todo__text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .todo-list__todo__text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .todo-article {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  /* portrait styles here */
+  .todo-list__todo__text {
+    font-size: 15px;
+  }
+  .todo-article {
+    max-width: 50%;
+  }
+}
