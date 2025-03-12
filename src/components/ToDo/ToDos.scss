@@ -66,6 +66,10 @@ label span {
   position: relative;
   background: none;
   padding: 3px;
+  &:hover {
+    cursor: pointer;
+  }
+
 }
 
 [type="checkbox"]:checked + span:before {

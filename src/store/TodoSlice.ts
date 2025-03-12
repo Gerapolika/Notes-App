@@ -28,7 +28,12 @@ const todoSlice = createSlice({
 
     clearComplete(state, action) {
       state.todos = state.todos.filter((todo) => !todo.done);
-      localStorage.setItem("todos", JSON.stringify(state.todos));
+      const localStorageTodos = localStorage.getItem("todos")
+      ? JSON.parse(localStorage.getItem("todos")!)
+      : [];
+    
+      const filteredLocalStorageTodos = localStorageTodos.filter((todo:TodosType ) => !todo.done);
+      localStorage.setItem("todos", JSON.stringify(filteredLocalStorageTodos));
     },
 
     completeTodo(state, action) {

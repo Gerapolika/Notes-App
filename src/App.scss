@@ -52,6 +52,10 @@
       &::before {
         content: "\1431";
       }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &__btn-hidden {
@@ -62,6 +66,10 @@
 
       &::before {
         content: "\142F";
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }
